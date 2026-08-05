@@ -1,0 +1,55 @@
+[project]
+name = "stockpilot"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "alembic>=1.19.0",
+    "asyncpg>=0.31.0",
+    "fastapi>=0.141.1",
+    "pydantic-settings>=2.14.2",
+    "python-dotenv>=1.2.2",
+    "sqlalchemy>=2.0.51",
+    "structlog>=26.1.0",
+    "uvicorn>=0.52.1",
+]
+
+[dependency-groups]
+dev = [
+    "factory-boy>=3.3.3",
+    "httpx>=0.28.1",
+    "mypy>=2.3.0",
+    "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.0",
+    "ruff>=0.16.1",
+]
+
+
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = [
+    "E",  # All pycodestyle errors
+    "F",  # All pyflakes errors
+    "I",  # All import-related issues
+    "N",  # All naming issues
+    "S",  # All security issues
+    "UP",  # All unused code issues
+]
+
+ignore = []
+
+[tool.ruff.lint.isort]
+known_third_party = ["app"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = false
+disallow_untyped_defs = true
+ignore_missing_imports = true
+exclude = ["tests/.*", "migrations/.*"]
+
