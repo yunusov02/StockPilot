@@ -56,3 +56,9 @@ uv run mypy app
 ```
 
 Mypy reads type annotations and check whatever you are using consistently
+
+
+```
+Когда мы декорируем функцию, имя (slow_add) начинает указывать на wrapper, а не на оригинал — поэтому __name__ и __doc__ становятся "wrapper" вместо настоящих. @wraps(func) копирует эти метаданные с оригинальной функции на wrapper, так что slow_add.__name__ снова показывает "slow_add", а не "wrapper"
+
+```
