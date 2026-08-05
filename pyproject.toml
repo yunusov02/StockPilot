@@ -44,7 +44,7 @@ select = [
 ignore = []
 
 [tool.ruff.lint.isort]
-known_third_party = ["app"]
+known-third-party = ["app"]
 
 [tool.mypy]
 python_version = "3.12"
