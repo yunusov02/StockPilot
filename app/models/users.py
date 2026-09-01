@@ -8,6 +8,7 @@ class UserRole(Enum):
     OWNER = "owner"
     STAFF = "staff"
 
+
 class Users(Base):
     __tablename__ = "users"
 

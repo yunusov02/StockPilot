@@ -16,6 +16,10 @@ class Product(Base):
     current_stock: Mapped[int] = mapped_column(nullable=False, comment="Current stock quantity")
     reorder_level: Mapped[int] = mapped_column(nullable=False, comment="Reorder level quantity")
 
+    supplier_id: Mapped[int] = mapped_column(
+        ForeignKey("suppliers.id"), nullable=False, comment="Supplier ID"
+    )
+
     def __str__(self) -> str:
         return f"Product(id={self.id}, sku='{self.sku}', name='{self.name}')"
 
