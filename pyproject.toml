@@ -55,4 +55,6 @@ strict = false
 disallow_untyped_defs = true
 ignore_missing_imports = true
 exclude = ["tests/.*", "migrations/.*"]
+plugins = ["pydantic.mypy"]
+
 

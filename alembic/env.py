@@ -1,7 +1,8 @@
 from logging.config import fileConfig
 
-from sqlalchemy import engine_from_config
-from sqlalchemy import pool
+# this is the Alembic Config object, which provides
+from app.db.base import Base
+from sqlalchemy import engine_from_config, pool
 
 from alembic import context
 
@@ -18,18 +19,9 @@ if config.config_file_name is not None:
 # for 'autogenerate' support
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
-from app.db.base import Base
 
 target_metadata = Base.metadata
 
-from app.models import (
-    users,
-    categories,
-    suppliers,
-    products,
-    stock_movement,
-    orders,
-)
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:
